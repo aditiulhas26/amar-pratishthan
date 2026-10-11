@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const CATEGORIES = ['Garbage picking', 'Sweeping', 'Toilet cleaning', 'Events'];
+const CATEGORIES = ['Garbage picking', 'Sweeping', 'Toilet cleaning', 'Survey'];
 
 const photoSchema = new mongoose.Schema({
   category: { type: String, enum: CATEGORIES, required: true },
