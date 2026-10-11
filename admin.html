@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Admin | Amar Pratishthan</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="admin.css">
+</head>
+<body class="admin-body">
+
+<header class="admin-top">
+  <div class="admin-top-inner">
+    <a class="brand" href="index.html"><img src="logo.png" alt="Amar Pratishthan"><span class="brand-name">Amar Pratishthan<small>Admin panel</small></span></a>
+    <button class="btn btn-ghost" id="logoutBtn" type="button" hidden>Log out</button>
+  </div>
+</header>
+
+<main class="admin-main">
+
+  <!-- LOGIN -->
+  <section id="loginView" class="admin-card login-card" hidden>
+    <h1>Admin login</h1>
+    <p class="muted">Only the trust's administrator can add photos and read enquiries.</p>
+    <label for="username">Username</label>
+    <input type="text" id="username" autocomplete="username">
+    <label for="password">Password</label>
+    <input type="password" id="password" autocomplete="current-password">
+    <button class="btn btn-primary" id="loginBtn" type="button">Log in</button>
+    <p class="status" id="loginStatus" role="status"></p>
+  </section>
+
+  <!-- DASHBOARD -->
+  <div id="dashView" hidden>
+
+    <section class="admin-card">
+      <h2>Add a photo</h2>
+      <div class="form-row">
+        <div>
+          <label for="pCategory">Category</label>
+          <select id="pCategory">
+            <option>Garbage picking</option>
+            <option>Sweeping</option>
+            <option>Toilet cleaning</option>
+            <option>Events</option>
+          </select>
+        </div>
+        <div>
+          <label for="pArea">Area / ward</label>
+          <input type="text" id="pArea" maxlength="100" placeholder="e.g. Ward 127, Shivraj Dayasagar">
+        </div>
+      </div>
+      <div class="form-row full">
+        <div>
+          <label for="pCaption">Caption (optional)</label>
+          <input type="text" id="pCaption" maxlength="200" placeholder="e.g. Morning garbage collection round">
+        </div>
+      </div>
+      <div class="form-row full">
+        <div>
+          <label for="pFile">Photo (JPG, PNG or WebP, max 8 MB)</label>
+          <input type="file" id="pFile" accept="image/jpeg,image/png,image/webp,image/heic,image/heif">
+        </div>
+      </div>
+      <button class="btn btn-primary" id="uploadBtn" type="button">Upload photo</button>
+      <p class="status" id="uploadStatus" role="status"></p>
+    </section>
+
+    <section class="admin-card">
+      <h2>Gallery photos <span class="count" id="photoCount"></span></h2>
+      <div class="admin-photo-grid" id="photoGrid"></div>
+    </section>
+
+    <section class="admin-card">
+      <h2>Enquiries <span class="count" id="msgCount"></span></h2>
+      <ul class="admin-msgs" id="msgList"></ul>
+    </section>
+
+  </div>
+</main>
+
+<script src="admin.js"></script>
+</body>
+</html>
